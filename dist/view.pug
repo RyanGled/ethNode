@@ -1,0 +1,35 @@
+doctype html
+html
+    head
+        link(rel='stylesheet'
+            href='/css/bootstrap.css')
+
+        script(src='/js/EthConvert.js')
+        script(src='/js/AppliedBlockchain.js')
+        script(src='https://unpkg.com/axios/dist/axios.min.js')
+    body
+
+        div(class='container')
+            div(class='row justify-content-md-center mt-lg-5')
+                div(class='col-md-auto')
+
+                    h1='Applied Blockchain'
+                    form(onsubmit='return false')
+                        div(class='mt-lg-5')
+                            label(for='eth-address')='Address'
+                            div(id='error',
+                                style='color: firebrick')
+                            input(id='eth-address'
+                                class='form-control'
+                                type='text'
+                                placeholder='Ethereum Wallet Address...'
+                                required)
+
+                        button(id="btnConnect"
+                            class="btn btn-primary mt-3 w-100"
+                            onclick='AppliedBlockchain.init(document.getElementById("eth-address").value)')='Get Info'
+
+                        div(class='mt-lg-5'
+                            id='eth-balance-container')='Eth Balance'
+                            div(id='eth-balance',
+                                style='color: green')
