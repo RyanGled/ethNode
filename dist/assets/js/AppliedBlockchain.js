@@ -3,8 +3,8 @@ const AppliedBlockchain = {
     /**
      * @param ethAddress string
      */
-    async init(ethAddress) {
-        const isAddressValid = await this.checkValidAddress(ethAddress)
+    init(ethAddress) {
+        const isAddressValid = this.checkValidAddress(ethAddress)
 
         if (isAddressValid != null) {
             this.retrieveAccInfo(ethAddress)
